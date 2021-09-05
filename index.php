@@ -29,10 +29,10 @@ switch ($option) {
         include_once "clientes.php";
         break;
     case 3:
-        include_once "ui/navbar.php";
+        include_once "reporte.php";
         break;
         case 4:
-            include_once "ui/navbar.php";
+            include_once "ventas.php";
             break;
             default:
             include_once "productos.php";

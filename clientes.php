@@ -68,13 +68,13 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
   <div class="mb-3">
     <label for="InputRazon" class="form-label">RAZON SOCIAL</label>
     <input type="text" class="form-control" id="InputRazon" aria-describedby="descripcion" required>
-    <div id="Alert-Desc" class="form-text"></div>
+    <div id="Alert-Razon" class="form-text"></div>
   </div>
 
   <div class="mb-3">
     <label for="InputRfc" class="form-label">RFC</label>
     <input type="text" class="form-control" id="InputRfc" required>
-    <div id="Alert-Medida" class="form-text"></div>
+    <div id="Alert-Rfc" class="form-text"></div>
   </div>
 
 </div>
@@ -101,14 +101,14 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
           <div class="modal-body">
           <input type="hidden" id="idEditar">
   <div class="mb-3">
-    <label for="InputDesc" class="form-label">RAZON SOCIAL</label>
-    <input type="text" class="form-control" id="InputDescEditar"  aria-describedby="descripcion" required>
+    <label for="InputRazonEditar" class="form-label">RAZON SOCIAL</label>
+    <input type="text" class="form-control" id="InputRazonEditar"  aria-describedby="descripcion" required>
     <div id="Alert-Desc" class="form-text"></div>
   </div>
 
   <div class="mb-3">
-    <label for="InputMedida" class="form-label">RFC</label>
-    <input type="text" class="form-control" id="InputMedidaEditar" required>
+    <label for="InputRfcEditar" class="form-label">RFC</label>
+    <input type="text" class="form-control" id="InputRfcEditar" required>
     <div id="Alert-Medida" class="form-text"></div>
   </div>
 
@@ -123,4 +123,4 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
 </div>
 <!-- END MODAL Modificar -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-<script src="js/productos.js"></script>
+<script src="js/clientes.js"></script>
