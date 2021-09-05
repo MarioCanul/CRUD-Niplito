@@ -1,10 +1,10 @@
 <?php
 
-function actualizarProducto($nombre, $precio, $descripcion, $id)
+function actualizarProducto($descripcion, $medida, $precio, $id)
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->prepare("UPDATE productos SET nombre = ?, precio = ?, descripcion = ? WHERE id = ?");
-    return $sentencia->execute([$nombre, $precio, $descripcion, $id]);
+    $sentencia = $bd->prepare("UPDATE productos SET DESCRIPCION = ?, UNIDADMEDIDA = ?, PRECIO1 = ? WHERE IDMATERIAL = ?");
+    return $sentencia->execute([$descripcion, $medida, $precio, $id]);
 }
 
 
@@ -19,7 +19,7 @@ function obtenerProductos()
 function eliminarProducto($id)
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->prepare("DELETE FROM productos WHERE id = ?");
+    $sentencia = $bd->prepare("DELETE FROM productos WHERE IDMATERIAL = ?");
     return $sentencia->execute([$id]);
 }
 
