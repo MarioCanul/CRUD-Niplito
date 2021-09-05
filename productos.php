@@ -55,31 +55,31 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
         <h5 class="modal-title" id="staticBackdropLabel">Registrar Producto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form>
+      <form >
           <div class="modal-body">
           
   <div class="mb-3">
     <label for="InputDesc" class="form-label">DESCRIPCION</label>
-    <input type="text" class="form-control" id="InputDesc" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="InputDesc" aria-describedby="descripcion" required>
     <div id="Alert-Desc" class="form-text"></div>
   </div>
 
   <div class="mb-3">
     <label for="InputMedida" class="form-label">MEDIDA</label>
-    <input type="text" class="form-control" id="InputMedida">
+    <input type="text" class="form-control" id="InputMedida" required>
     <div id="Alert-Medida" class="form-text"></div>
   </div>
 
   <div class="mb-3 ">
   <label for="InputPrecio" class="form-label">PRECIO</label>
-    <input type="number" step="0.01" class="form-control" id="InputPrecio">
-    <div id="Alert-Medida" class="form-text"></div>
+    <input type="number" step="0.01" class="form-control" id="InputPrecio" required>
+    <div id="Alert-precio" class="form-text"></div>
   </div>
 
 </div>
 <div class="modal-footer">
-  <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  <button type="button" class="btn btn-primary">Understood</button>
+  <button type="submit" id='closeModal' class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <button type="button" onClick="RegistrarProducto();"class="btn btn-primary">Understood</button>
 </div>
 </form>
     </div>
