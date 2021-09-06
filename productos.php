@@ -6,7 +6,7 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
 
     <div class="container">
         <h2 class="text-center">Productos existentes</h2>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistro">Nuevo&nbsp;<i class="fa fa-plus"></i></button>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalRegistro">Nuevo&nbsp;<i class="fa fa-plus"></i></button>
         <table class="table">
             <thead>
                 <tr>
@@ -134,5 +134,5 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
   </div>
 </div>
 <!-- END MODAL Modificar -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
 <script src="js/productos.js"></script>

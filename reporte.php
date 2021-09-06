@@ -1,6 +1,7 @@
 <?php
-include('config.php');
-$conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
+include_once "db-reporte/funciones-reporte.php";
+$ReporteVenta = obtenerReporteVenta();
+$ReporteCliente = obtenerReporteCliente();
 
 ?>
 <div class="container">
@@ -11,31 +12,34 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
     <table class="table">
             <thead>
                 <tr>
-                    <th>IDCODIGO</th>
                     <th>IDMATERIAL</th>
-                    <th>UNIDAD MEDIDA</th>
-                    <th>CANTIDAD</th>
-                    <th>PRECIO</th>
+                    <th>DESCRIPCION</th>
+                    <th>TOTAL DE PIEZAS VENDIDAS</th>
+                    <th>SUBTOTAL</th>
+                    <!-- <th>PRECIO</th> -->
                     
                 </tr>
             </thead>
             <tbody id="cuerpoTabla">
-            <?php
-        $sql="SELECT * from documentorenglon";
-        $result=mysqli_query($conexion,$sql);
+  
 
-        while ($mostrar=mysqli_fetch_array($result)) {
-?>
+<?php
+    foreach($ReporteVenta as $elemento){
+      ?>
                 <tr>
-                    <td> <?php echo $mostrar['IDCODIGO'] ?></td>
-                    <td> <?php echo $mostrar['IDMATERIAL'] ?></td>
-                    <td> <?php echo $mostrar['UNIDADMEDIDA'] ?></td>
-                    <td> <?php echo $mostrar['CANTIDAD'] ?></td>
-                    <td> <?php echo $mostrar['PRECIO1'] ?></td>
+                    <td> <?php echo $elemento->IDMATERIAL ?></td>
+                    <td> <?php echo $elemento->DESCRIPCION ?></td>
+                    <td> <?php echo $elemento->TOTALPIEZAS ?></td>
+                    <td> <?php echo $elemento->TOTAL ?></td>
+                    
                 </tr>
+
+
                 <?php     
                 }
                 ?>
+
+
             </tbody>
         </table>
 
@@ -45,7 +49,7 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
     <table class="table">
             <thead>
                 <tr>
-                    <th>IDCODIGO</th>
+                    
                     <th>IDCLIENTE</th>
                     <th>RAZON SOCIAL</th>
                     <th>RFC</th>
@@ -57,19 +61,16 @@ $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
             </thead>
             <tbody id="cuerpoTabla">
             <?php
-        $sql="SELECT * from documento";
-        $result=mysqli_query($conexion,$sql);
-
-        while ($mostrar=mysqli_fetch_array($result)) {
-?>
+    foreach($ReporteCliente as $elemento){
+      ?>
                 <tr>
-                    <td> <?php echo $mostrar['IDCODIGO'] ?></td>
-                    <td> <?php echo $mostrar['IDCLIENTE'] ?></td>
-                    <td> <?php echo $mostrar['RAZON_SOCIAL'] ?></td>
-                    <td> <?php echo $mostrar['RFC'] ?></td>
-                    <td> <?php echo $mostrar['SUBTOTAL'] ?></td>
-                    <td> <?php echo $mostrar['IVA'] ?></td>
-                    <td> <?php echo $mostrar['TOTAL'] ?></td>
+                    
+                    <td> <?php echo $elemento->IDCLIENTE ?></td>
+                    <td> <?php echo $elemento->RFC ?></td>
+                    <td> <?php echo $elemento->RAZON_SOCIAL ?></td>
+                    <td> <?php echo $elemento->SUBTOTAL ?></td>
+                    <td> <?php echo $elemento->IVA ?></td>
+                    <td> <?php echo $elemento->TOTAL ?></td>
                 </tr>
                 <?php     
                 }
